@@ -1,0 +1,37 @@
+[package]
+name = "shared"
+version = "0.1.0"
+authors = ["Reyth3"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = 'abort'
+incremental = false
+overflow-checks = true
+
+[features]
+default = []
+
+[dependencies]
+snafu = { version = "0.6.3" }
+serde = { version = "1.0.114", default-features = false, features = ["derive"] }
+schemars = "0.8.1"
+cosmwasm-std = { git = "https://github.com/scrtlabs/cosmwasm", branch = "secret", features = [
+  "staking",
+], package = "secret-cosmwasm-std" }
+secret-toolkit = { git = "https://github.com/itsHaseebSaeed/secret-toolkit", branch = "master", features = [
+  "permit",
+] }
+secret-storage-plus = { git = "https://github.com/securesecrets/secret-plus-utils", branch = "main" }
+
+[dev-dependencies]
+cosmwasm-schema = { version = "1.1.0" }
