@@ -35,7 +35,6 @@ export async function storeAndInitContract(client: SecretNetworkClient, contract
     );
 
     const code_hash = (await client.query.compute.codeHashByCodeId({code_id: codeId.toString()})).code_hash;
-    console.log("hash len", code_hash.length);
     const tx = await client.tx.compute.instantiateContract(
         {
           sender: client.address,
@@ -50,7 +49,6 @@ export async function storeAndInitContract(client: SecretNetworkClient, contract
         },
       );
 
-      console.log(tx);
       const contractAddress = tx.arrayLog.find(
         (log) => log.type === "message" && log.key === "contract_address",
       ).value;
