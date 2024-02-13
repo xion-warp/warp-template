@@ -1,6 +1,6 @@
 # Warp Template
 
-This repo contains a project template for the Warp tool. Currently, the workspace is preconfigured with a few basic functionalities that improve the user experience.
+This repo contains a project template for the [Warp CLI tool](https://github.com/archway-warp/warp-cli). It is a plug-in that integrates XION into the tool. Currently, the workspace is preconfigured with a few basic functionalities that improve the user experience.
 
 ## What can you find here?
 
@@ -17,4 +17,6 @@ Furthermore, when used with the `warp` command line tool, it provides a few addi
 
 ## What about frontend?
 
-It is not included as of right now. I am not a frontend developer, and as such, I can't hold opinions on what's comfortable to use in the frontend world. In the future there will be options available to include various frontends through the CLI.
+~~It is not included as of right now. I am not a frontend developer, and as such, I can't hold opinions on what's comfortable to use in the frontend world. In the future there will be options available to include various frontends through the CLI.~~
+
+This time around it is actually possible to scaffold a frontend, if you're building a fullstack DApp -- `warp frontend`
